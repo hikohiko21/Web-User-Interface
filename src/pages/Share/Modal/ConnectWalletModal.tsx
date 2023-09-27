@@ -217,7 +217,7 @@ const ConnectWalletModalBase: FC<ConnectWalletModalBaseProps> = ({
     <BaseStack spacing={0}>
       <p className="WalletLearnMore">
         <NESTa
-          href="https://docs.arithfi.com/ko/blog/How-to-Swap-On-ArithFi"
+          href="https://docs.arithfi.com/blog/How-to-Swap-On-ArithFi"
           target={"_blank"}
         >
           <Trans>Learn more</Trans>{" "}
