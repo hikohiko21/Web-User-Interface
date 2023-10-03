@@ -86,7 +86,6 @@ const ConnectWalletModalBase: FC<ConnectWalletModalBaseProps> = ({
   const { isBigMobile } = useWindowWidth();
   const [isMore, setIsMore] = useState(false);
   const { connectData } = useNEST();
-  
 
   const selectWallet = useCallback(
     async (item: WalletConnector) => {
@@ -172,7 +171,74 @@ const ConnectWalletModalBase: FC<ConnectWalletModalBaseProps> = ({
           <ItemBox
             key={`WalletModalRow1 + ${index}`}
             // eslint-disable-next-line react-hooks/rules-of-hooks
-            onClick={() => selectWallet(item)}
+            onClick={useCallback(async () => {
+                if (isBigMobile) {
+                  if (item.name === "Trust Wallet") {
+                    connectData.connect({
+                      connector: connectData.connectors.filter(
+                        (item) => item.name === "Injected_Trust"
+                      )[0],
+                    });
+                  } else {
+                    item.connect?.();
+                  }
+                  let callbackFired = false;
+          
+                  item.onConnecting?.(async () => {
+                    if (callbackFired) return;
+                    callbackFired = true;
+                    const getMobileUri = item.mobile?.getUri;
+                    if (getMobileUri) {
+                      const mobileUri = await getMobileUri();
+          
+                      if (
+                        item.connector.id === "walletConnect" ||
+                        item.connector.id === "walletConnectLegacy"
+                      ) {
+                        setWalletConnectDeepLink({
+                          mobileUri: mobileUri,
+                          name: item.name,
+                        });
+                      }
+          
+                      if (mobileUri.startsWith("http")) {
+                        const link = document.createElement("a");
+                        link.href = mobileUri;
+                        link.target = "_blank";
+                        link.rel = "noreferrer noopener";
+                        link.click();
+                      } else {
+                        window.location.href = mobileUri;
+                      }
+                    }
+                  });
+                } else {
+                  if (item.ready) {
+                    if (
+                      item.connector.id === "walletConnect" ||
+                      item.connector.id === "walletConnectLegacy"
+                    ) {
+                      connectData.connect({
+                        connector: connectData.connectors.filter(
+                          (item) => item.id === "walletConnect"
+                        )[0],
+                      });
+                    } else {
+                      item.connect?.();
+                    }
+                  }
+                  const getDesktopDeepLink = item.desktop?.getUri;
+                  if (getDesktopDeepLink) {
+                    // if desktop deep link, wait for uri
+                    setTimeout(async () => {
+                      const uri = await getDesktopDeepLink();
+                      window.open(uri, "_self");
+                    }, 0);
+                  }
+                }
+              },
+              [item]
+            )}
           >
             <div className="WalletIcon">
               <Icon />
@@ -198,7 +264,74 @@ const ConnectWalletModalBase: FC<ConnectWalletModalBaseProps> = ({
           <ItemBox
             key={`WalletModalRow2 + ${index}`}
             // eslint-disable-next-line react-hooks/rules-of-hooks
-            onClick={() => selectWallet(item)}
+            onClick={useCallback(async () => {
+              if (isBigMobile) {
+                if (item.name === "Trust Wallet") {
+                  connectData.connect({
+                    connector: connectData.connectors.filter(
+                      (item) => item.name === "Injected_Trust"
+                    )[0],
+                  });
+                } else {
+                  item.connect?.();
+                }
+                let callbackFired = false;
+        
+                item.onConnecting?.(async () => {
+                  if (callbackFired) return;
+                  callbackFired = true;
+                  const getMobileUri = item.mobile?.getUri;
+                  if (getMobileUri) {
+                    const mobileUri = await getMobileUri();
+        
+                    if (
+                      item.connector.id === "walletConnect" ||
+                      item.connector.id === "walletConnectLegacy"
+                    ) {
+                      setWalletConnectDeepLink({
+                        mobileUri: mobileUri,
+                        name: item.name,
+                      });
+                    }
+        
+                    if (mobileUri.startsWith("http")) {
+                      const link = document.createElement("a");
+                      link.href = mobileUri;
+                      link.target = "_blank";
+                      link.rel = "noreferrer noopener";
+                      link.click();
+                    } else {
+                      window.location.href = mobileUri;
+                    }
+                  }
+                });
+              } else {
+                if (item.ready) {
+                  if (
+                    item.connector.id === "walletConnect" ||
+                    item.connector.id === "walletConnectLegacy"
+                  ) {
+                    connectData.connect({
+                      connector: connectData.connectors.filter(
+                        (item) => item.id === "walletConnect"
+                      )[0],
+                    });
+                  } else {
+                    item.connect?.();
+                  }
+                }
+                const getDesktopDeepLink = item.desktop?.getUri;
+                if (getDesktopDeepLink) {
+                  // if desktop deep link, wait for uri
+                  setTimeout(async () => {
+                    const uri = await getDesktopDeepLink();
+                    window.open(uri, "_self");
+                  }, 0);
+                }
+              }
+            },
+            [item]
+          )}
           >
             <div className="WalletIcon">
               <Icon />

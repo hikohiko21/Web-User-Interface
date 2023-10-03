@@ -109,7 +109,7 @@ export const Wallets = [
   {
     wallet: coinbaseWallet({ chains, appName: "ATF" }),
     icon: CoinbaseWallet,
-    name: "coinbase Wallet",
+    name: "Coinbase Wallet",
   },
   {
     wallet: trustWallet({ projectId: PROJECT_ID, chains: chains }),
@@ -148,7 +148,6 @@ const config = createConfig({
 
 const WalletProvider: FC<ProviderProps> = ({ children }) => {
   const { nowTheme } = useTheme();
-  console.log(config.connectors);
   return (
     <WagmiConfig config={config}>
       <RainbowKitProvider
