@@ -242,13 +242,27 @@ msgstr "O ArithFi pode atender às necessidades de usuários de longo prazo."
 
 #: src/pages/Home/Home.tsx
 #: src/pages/Home/Home.tsx
+msgid "ArithFi Coin"
+msgstr "Moeda ArithFi"
+
+#: src/pages/Home/Home.tsx
+#: src/pages/Home/Home.tsx
 msgid "ArithFi is based on the SCP (Smart contract Counterparty) model."
 msgstr "ArithFi é baseado no modelo SCP (Smart contract Counterparty)"
+
+#: src/pages/Token/Token.tsx
+msgid "ArithFi Swap"
+msgstr "Troca ArithFi"
 
 #: src/pages/Home/Home.tsx
 #: src/pages/Home/Home.tsx
 msgid "ArithFi, A decentralized Derivatives Exchange Eliminates Market Makers and LPs."
 msgstr "ArithFi, uma Bolsa Descentralizada de Derivativos, Elimina Fabricantes de Mercado e LPs."
+
+#: src/pages/Home/Home.tsx
+#: src/pages/Home/Home.tsx
+msgid "ATF is a deflationary token and serves as the settlement token for the ArithFi arithmetic trading model. Holders of ATF tokens can be considered as counterparts to all traders in ArithFi. We believe that traders cannot consistently outperform the market in the long run, thus ATF holders can benefit from the appreciation of the token due to losses incurred by traders. With ongoing product iterations and community development, ATF will become a equilibrium asset. Additionally, ATF tokens also possess governance functions, providing more rights to ATF holders in the future."
+msgstr "O ATF é um token deflacionário e serve como token de liquidação para o modelo de negociação aritmética da ArithFi. Os detentores de tokens ATF podem ser considerados como contrapartes de todos os traders na ArithFi. Acreditamos que os traders não podem consistentemente superar o mercado a longo prazo, portanto, os detentores de ATF podem se beneficiar com a valorização do token devido às perdas incorridas pelos traders. Com iterações contínuas do produto e desenvolvimento da comunidade, o ATF se tornará um ativo de equilíbrio. Além disso, os tokens ATF também possuem funções de governança, proporcionando mais direitos aos detentores de ATF no futuro."
 
 #: src/pages/Copy/Components/TraderChartView.tsx
 msgid "AUM (ATF)"
@@ -457,6 +471,10 @@ msgstr "Retorno Cumulativo"
 msgid "Current"
 msgstr "Atual"
 
+#: src/pages/Token/Token.tsx
+msgid "CURRENT ATF PRICE (USD)"
+msgstr "PREÇO ATUAL DO ATF (USD)"
+
 #: src/pages/Copy/Components/CopySettingModal.tsx
 msgid "Current:"
 msgstr "Atual:"
@@ -632,6 +650,11 @@ msgstr "Futuros, Opções, Produtos Estruturados"
 msgid "GET"
 msgstr "OBTER"
 
+#: src/pages/Home/Home.tsx
+#: src/pages/Home/Home.tsx
+msgid "GET $ATF"
+msgstr "OBTENHA $ATF"
+
 #: src/pages/Share/Modal/DepositModal.tsx
 msgid "Get ATF"
 msgstr "Obter ATF"
@@ -645,6 +668,10 @@ msgstr "Github"
 #: src/pages/Futures/OrderList.tsx
 msgid "History"
 msgstr "História"
+
+#: src/pages/Token/Token.tsx
+msgid "Home"
+msgstr "Início"
 
 #: src/pages/Futures/MoreInfo.tsx
 msgid "How to Trade"
@@ -978,6 +1005,10 @@ msgstr "Ordens"
 #: src/pages/Personal/Referral/Referral.tsx
 msgid "Overview"
 msgstr "Visão geral"
+
+#: src/pages/Token/Token.tsx
+msgid "Pancake"
+msgstr "Pancake"
 
 #: src/pages/Overview/Components/MobileList.tsx
 #: src/pages/Overview/Components/MoneyTable.tsx
@@ -1526,6 +1557,11 @@ msgstr "Depósito na carteira"
 msgid "Wallet Withdraw"
 msgstr "Retirada da carteira"
 
+#: src/pages/Token/Token.tsx
+#: src/pages/Token/Token.tsx
+msgid "Where to buy $ATF"
+msgstr "Onde comprar $ATF"
+
 #: src/pages/Home/Home.tsx
 #: src/pages/Home/Home.tsx
 msgid "Why is this considered the next-generation trading model?"
@@ -1556,6 +1592,10 @@ msgstr "com 1 clique"
 #: src/pages/Share/Modal/WithdrawModal.tsx
 msgid "Withdraw"
 msgstr "Retirar"
+
+#: src/pages/Token/Token.tsx
+msgid "You can buy $ATF from exchanges or wallets directly.CEXs let you buy crypto using fiat. They hold $ATF you buy until you send it to a wallet you control. Or your can buy $ATF peer-to-peer on DEXs to lets you keep your funds in your hands."
+msgstr "Você pode comprar $ATF em exchanges ou carteiras diretamente. As CEXs permitem que você compre criptomoedas usando moeda fiduciária. Elas mantêm o $ATF que você compra até que você o envie para uma carteira que você controla. Ou você pode comprar $ATF de forma peer-to-peer em DEXs para manter seus fundos sob seu controle."
 
 #: src/pages/Copy/Copy.tsx
 msgid "You can freely choose the KOL that suits you in the leaderboards."
